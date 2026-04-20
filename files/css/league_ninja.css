@@ -1,0 +1,47 @@
+.reveal h1 {
+    font-size:3.0em;
+}
+.reveal h2 {
+    font-size:2.0em;
+    text-shadow: var(--r-heading1-text-shadow);
+}
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    text-transform:none;
+}
+.reveal .slides > section.present,
+.reveal .slides > section > section.present {
+    padding-top:0;
+}
+
+/* Background highlighter */
+.hljs {
+    background-color:#000;
+}
+
+/* code only verkleinern */
+.reveal code {
+    font-size:.8em;
+}
+
+/* Kein Rahmen, Kein Hintergrund für Titelgrafik */
+img.noborder {
+    border: 0 hidden #000 !important;
+    box-shadow: none !important;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+}
+
+/* Tabellenspalten weniger Abstand */
+.reveal table th,
+.reveal table td {
+    padding:.2em .3em;
+}
+
+.reveal-viewport {
+  background-image: url(myAvatar.png);
+  background-size: 4%;
+  background-repeat: no-repeat;
+  background-position: 99% 2%;
+}

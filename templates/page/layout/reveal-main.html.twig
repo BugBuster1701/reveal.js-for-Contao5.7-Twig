@@ -1,0 +1,36 @@
+{% extends "@Contao/page/layout.html.twig" %}
+
+{%- set body_attributes = attrs()
+    .addClass('layout--1-column')
+    .mergeWith(body_attributes|default)
+-%}
+
+{% block end_of_head %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="{{ asset('reveal/dist/reset.css', 'contao_vfs.files') }}">
+    <link rel="stylesheet" href="{{ asset('reveal/dist/reveal.css', 'contao_vfs.files') }}">
+    <link rel="stylesheet" href="{{ asset('reveal/dist/theme/league.css', 'contao_vfs.files') }}">
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="{{ asset('reveal/dist/plugin/highlight/monokai.css', 'contao_vfs.files') }}">
+	<!-- Avatar -->
+	<link rel="stylesheet" href="{{ asset('css/league_ninja.css', 'contao_vfs.files') }}">
+
+{% endblock %}
+{% block body %}
+    {{ parent() }}
+    {% include 'reveal/js_reveal.html.twig' %}
+{% endblock %}
+{% block body_content %}
+<div id="wrapper" class="reveal">
+    <div class="slides">
+        {% slot main %}
+            {{ slot() }}
+        {% endslot %}
+    </div>
+</div>
+{% endblock %}
+
+{% block end_of_body %}
+    {{ parent() }}
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "@Contao/content_element/text.html.twig" %}
+
+{#
+  ** Add changes to the base template here. **
+
+  Hint: Try adjusting blocks and attributes instead of
+  overwriting the whole template. This way your version
+  can remain compatible with future changes to the base
+  template as well as adjustments made by extensions.
+
+  Currently available blocks:
+    "picture_component", "image", "sources", "source",
+    "schema_org", "figure_component", "media",
+    "media_link", "caption", "caption_inner",
+    "text_media", "content", "text",
+    "text_attributes", "headline_component",
+    "headline_attributes", "headline_inner",
+    "wrapper", "wrapper_tag", "attributes", "inner",
+    "metadata", "style", "script"
+
+  Example:
+    {% block picture_component %}
+       {{ parent() }}
+       My additional content for 'picture_component'…
+    {% endblock %}
+#}
+{% block wrapper %}
+    {# Wrapper element around headline and content #}
+    <section><!-- CE Text Section -->
+        {%- block inner %}
+            {% if headline.text %}
+                {{ block('headline_component') }}
+            {% endif %}
+
+            {% block content %}{{ parent() }}{% endblock %}
+        {% endblock -%}
+    </section><!-- CE Text Section Ende -->
+{% endblock %}
