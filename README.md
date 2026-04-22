@@ -36,3 +36,48 @@ Daher wurde die js Datei angepasst/umgeschrieben
 
 Ich bin kein JavaScript Programmierer, daher verzeiht mir die Code "Qualität" :-) 
 
+### Menu
+- https://github.com/denehyg/reveal.js-menu archived, daher fork genommen:
+- https://github.com/koodaamo/reveal.js-menu
+- abgelegt in files/reveal/dist/plugin/menu
+
+## Datei js_reveal.html.twig
+Darin werden alle benötigten JavaScript Dateien geladen und Receal.js konfiguriert und initialisiert.<br>
+Dort sind auch die Definitionen für den Footer zu finden.
+
+Die Datei liegt in templates/reveal/js_reveal.html.twig und wird vom Page Layout geladen. (eigene Variante)
+
+## Page Layout
+Es wurde eine eigene Variante angelegt reveal-main.html.twig, darin wird das spezielle Layout definiert (nur main), die CSS Dateien geladen und die js_reveal.html.twig.<br>
+Die eigene CSS Datei league_ninja.css ist da, um einige CSS Definitionen zu überschreiben, der Name ist natürlich frei wählbar.<br>
+Auch ein Logo wird hierüber definiert.
+
+## Templates
+- templates/reveal/mod_article_reveal.html.twig, notwendige Fallback Version templates/mod_article_reveal.html.twig
+- templates/reveal/content_element/text/reveal.html.twig
+
+# Nutzung - Theme Definitionen
+- neues Theme anlegen
+  - Ordner: files/reveal
+  - Templates-Ordner: reveal
+
+- Seitenlayout vom Typ "TWIG Layout mit Slots" darin anlegen
+  - Seiten-Template: page/layout/reveal-main [Global]
+  - Eingebundene Elemente: Artikel - slot main
+
+# Nutzung Seiten - Artikel - Text Elemente
+- Seite anlegen mit angelegtem Seitenlayout
+- Cache, beide auf "nicht cachen"
+
+- Artikel anlegen mit Standard Artikel-Template: `mod_article (Standard)` (article = slide)<br>
+Das wird im Frontend dann automatisch durch das `templates/reveal/mod_article.html.twig` ersetzt
+
+- Text Element(e) anlegen mit Standard Inhaltselement-Template: `content_element/text [ContaoCore]` (text-element = subslide)<br>
+Das wird im Frontend dann automatisch durch das `templates/reveal/content_element/text.html.twig` ersetzt.
+
+Im TinyMCE nun normal den Inhalt eintragen. Überschrift kann genutzt werden, h2 bevorzugt. (dazu gibt es Definitionen in league_ninja.css)
+
+Will man vertikale Folien haben (subslides), dann einfach ein zweites Text Element anlegen im Artikel. (bzw. mehrere, wieviel man halt will)
+
+
+

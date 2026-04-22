@@ -1,0 +1,16 @@
+{% extends "@Contao/content_element/text.html.twig" %}
+
+{% block wrapper %}
+    {# Wrapper element around headline and content #}
+    <!-- CE Text Section reveal -->
+    <section>
+        {%- block inner %}
+            {% if headline.text %}
+                {{ block('headline_component') }}
+            {% endif %}
+
+            {% block content %}{{ parent() }}{% endblock %}
+        {% endblock -%}
+    </section>
+    <!-- CE Text Section reveal Ende -->
+{% endblock %}

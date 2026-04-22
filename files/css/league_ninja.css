@@ -16,6 +16,10 @@
     padding-top:0;
 }
 
+/* wegen Footer etwas höher */
+.reveal .controls {
+    bottom: 3em;
+}
 /* Background highlighter */
 .hljs {
     background-color:#000;
@@ -44,4 +48,60 @@ img.noborder {
   background-size: 4%;
   background-repeat: no-repeat;
   background-position: 99% 2%;
+}
+
+.slide-menu-button .slide-menu-icon,
+.toolbar-panel-button .slide-menu-icon {
+    color: var(--r-link-color);
+}
+
+.slide-menu-toolbar .toolbar-panel-button {
+    display: none !important;
+}
+.slide-menu-toolbar .toolbar-panel-button#close {
+    display: table-cell !important;
+}
+
+/* Menu CSS Fix: i to span and remove fas and far*/
+
+.slide-menu-wrapper .slide-menu-item span.slide-menu-marker,
+.slide-menu-wrapper .slide-menu-item-vertical span.slide-menu-marker,
+.slide-menu-wrapper .slide-menu-item svg.svg-inline--fa,
+.slide-menu-wrapper .slide-menu-item-vertical svg.svg-inline--fa {
+    padding-right: 12px;
+    display: none;
+    flex-shrink: 0;
+}
+
+.slide-menu-wrapper .slide-menu-item.past span.past,
+.slide-menu-wrapper .slide-menu-item-vertical.past span.past,
+.slide-menu-wrapper .slide-menu-item.active span.active,
+.slide-menu-wrapper .slide-menu-item-vertical.active span.active,
+.slide-menu-wrapper .slide-menu-item.future span.future,
+.slide-menu-wrapper .slide-menu-item-vertical.future span.future,
+.slide-menu-wrapper .slide-menu-item.past svg.svg-inline--fa.past,
+.slide-menu-wrapper .slide-menu-item-vertical.past svg.svg-inline--fa.past,
+.slide-menu-wrapper .slide-menu-item.active svg.svg-inline--fa.active,
+.slide-menu-wrapper .slide-menu-item-vertical.active svg.svg-inline--fa.active,
+.slide-menu-wrapper .slide-menu-item.future svg.svg-inline--fa.future,
+.slide-menu-wrapper .slide-menu-item-vertical.future svg.svg-inline--fa.future {
+    display: inline-block;
+}
+
+.slide-menu-wrapper .slide-menu-item.past span.past,
+.slide-menu-wrapper .slide-menu-item-vertical.past span.past,
+.slide-menu-wrapper .slide-menu-item.future span.future,
+.slide-menu-wrapper .slide-menu-item-vertical.future span.future,
+.slide-menu-wrapper .slide-menu-item.past svg.svg-inline--fa.past,
+.slide-menu-wrapper .slide-menu-item-vertical.past svg.svg-inline--fa.past,
+.slide-menu-wrapper .slide-menu-item.future svg.svg-inline--fa.future,
+.slide-menu-wrapper .slide-menu-item-vertical.future svg.svg-inline--fa.future {
+    opacity: 0.4;
+}
+
+.slide-menu-wrapper .slide-menu-item.active span.active,
+.slide-menu-wrapper .slide-menu-item-vertical.active span.active,
+.slide-menu-wrapper .slide-menu-item.active svg.svg-inline--fa.active,
+.slide-menu-wrapper .slide-menu-item-vertical.active svg.svg-inline--fa.active {
+    opacity: 0.8;
 }

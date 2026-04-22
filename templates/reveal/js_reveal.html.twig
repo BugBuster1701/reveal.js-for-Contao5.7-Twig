@@ -5,7 +5,8 @@
 <script src="/files/reveal/dist/plugin/markdown.js"></script>
 <script src="/files/reveal/dist/plugin/highlight.js"></script>
 <script src="/files/reveal/dist/plugin/title-footer.js"></script>
-<script {{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
+<script type="module" {{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
+import RevealMenu from './files/reveal/dist/plugin/menu/menu.js';
     Reveal.initialize({
         // Display presentation control arrows
         // - true:      Show controls
@@ -288,6 +289,6 @@
             show_date: true // default is false
         },        
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealFooter],
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealFooter, RevealMenu],
     });
 </script>
