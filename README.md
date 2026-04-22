@@ -39,7 +39,7 @@ Ich bin kein JavaScript Programmierer, daher verzeiht mir die Code "Qualität" :
 ### Menu
 - https://github.com/denehyg/reveal.js-menu archived, daher fork genommen:
 - https://github.com/koodaamo/reveal.js-menu
-- abgelegt in files/reveal/dist/plugin/menu
+- abgelegt in `files/reveal/dist/plugin/menu`
 
 ## Datei js_reveal.html.twig
 Darin werden alle benötigten JavaScript Dateien geladen und Reveal.js konfiguriert und initialisiert.<br>
