@@ -19,9 +19,9 @@ Das Theme "league", welches ich verwende, zieht einen Zeichensatz Lato von exter
 Das wurde angepasst. (wegen CSP und Datenschutz)
 
 - geladen von https://gwfh.mranftl.com/fonts/lato?subsets=latin
-- abgelegt in files/reveal/dist/theme/fonts/lato-v24-latin
+- abgelegt in `files/reveal/dist/theme/fonts/lato-v24-latin`
 - passende CSS Datei von Webseite kopiert und angelegt
-- angepasst files/reveal/dist/theme/league.css 
+- angepasst `files/reveal/dist/theme/league.css`
 - auf die gleiche Art auch für den Font League Gothic
 
 ## Plugins hinzugefügt
@@ -31,8 +31,8 @@ Das wurde angepasst. (wegen CSP und Datenschutz)
 
 Leider nicht kompatibel mit neuerem reveal.js.<br>
 Daher wurde die js Datei angepasst/umgeschrieben
-- files/reveal/dist/plugin/title-footer.js
-- files/reveal/dist/plugin/title-footer.css
+- `files/reveal/dist/plugin/title-footer.js`
+- `files/reveal/dist/plugin/title-footer.css`
 
 Ich bin kein JavaScript Programmierer, daher verzeiht mir die Code "Qualität" :-) 
 
@@ -42,38 +42,38 @@ Ich bin kein JavaScript Programmierer, daher verzeiht mir die Code "Qualität" :
 - abgelegt in files/reveal/dist/plugin/menu
 
 ## Datei js_reveal.html.twig
-Darin werden alle benötigten JavaScript Dateien geladen und Receal.js konfiguriert und initialisiert.<br>
+Darin werden alle benötigten JavaScript Dateien geladen und Reveal.js konfiguriert und initialisiert.<br>
 Dort sind auch die Definitionen für den Footer zu finden.
 
-Die Datei liegt in templates/reveal/js_reveal.html.twig und wird vom Page Layout geladen. (eigene Variante)
+Die Datei liegt in `templates/reveal/js_reveal.html.twig` und wird vom Page Layout geladen. (eigene Variante)
 
 ## Page Layout
-Es wurde eine eigene Variante angelegt reveal-main.html.twig, darin wird das spezielle Layout definiert (nur main), die CSS Dateien geladen und die js_reveal.html.twig.<br>
+Es wurde eine eigene Variante angelegt reveal-main.html.twig, darin wird das spezielle Layout definiert (nur main), die CSS Dateien geladen und die `js_reveal.html.twig`.<br>
 Die eigene CSS Datei league_ninja.css ist da, um einige CSS Definitionen zu überschreiben, der Name ist natürlich frei wählbar.<br>
 Auch ein Logo wird hierüber definiert.
 
 ## Templates
-- templates/reveal/mod_article_reveal.html.twig, notwendige Fallback Version templates/mod_article_reveal.html.twig
-- templates/reveal/content_element/text/reveal.html.twig
+- `templates/reveal/mod_article.html.twig`
+- `templates/reveal/content_element/text.html.twig`
 
 # Nutzung - Theme Definitionen
 - neues Theme anlegen
-  - Ordner: files/reveal
-  - Templates-Ordner: reveal
+  - Ordner: `files/reveal`
+  - Templates-Ordner: `reveal`
 
 - Seitenlayout vom Typ "TWIG Layout mit Slots" darin anlegen
-  - Seiten-Template: page/layout/reveal-main [Global]
+  - Seiten-Template: `page/layout/reveal-main [Global]`
   - Eingebundene Elemente: Artikel - slot main
 
 # Nutzung Seiten - Artikel - Text Elemente
 - Seite anlegen mit angelegtem Seitenlayout
 - Cache, beide auf "nicht cachen"
 
-- Artikel anlegen mit Standard Artikel-Template: `mod_article (Standard)` (article = slide)<br>
-Das wird im Frontend dann automatisch durch das `templates/reveal/mod_article.html.twig` ersetzt
+- Artikel anlegen mit Standard Artikel-Template: `mod_article (Standard)`<br>(article = slide)<br>
+Das wird im Frontend dann automatisch durch `templates/reveal/mod_article.html.twig` ersetzt
 
-- Text Element(e) anlegen mit Standard Inhaltselement-Template: `content_element/text [ContaoCore]` (text-element = subslide)<br>
-Das wird im Frontend dann automatisch durch das `templates/reveal/content_element/text.html.twig` ersetzt.
+- Text Element(e) anlegen mit Standard Inhaltselement-Template: `content_element/text [ContaoCore]`<br>(text-element = subslide)<br>
+Das wird im Frontend dann automatisch durch `templates/reveal/content_element/text.html.twig` ersetzt.
 
 Im TinyMCE nun normal den Inhalt eintragen. Überschrift kann genutzt werden, h2 bevorzugt. (dazu gibt es Definitionen in league_ninja.css)
 
