@@ -43,7 +43,8 @@ Ich bin kein JavaScript Programmierer, daher verzeiht mir die Code "Qualität" :
 
 ## Datei js_reveal.html.twig
 Darin werden alle benötigten JavaScript Dateien geladen und Reveal.js konfiguriert und initialisiert.<br>
-Dort sind auch die Definitionen für den Footer zu finden.
+Dort sind auch die Definitionen für den Footer zu finden.<br>
+Hinweis: Das bedeutet leider, das der Footer Inhalt immer gleich ist, wenn man mehrere Seiten anlegt mit Präsentationen. An einer Idee das zu umgehen wird gearbeitet.
 
 Die Datei liegt in `templates/reveal/js_reveal.html.twig` und wird vom Page Layout geladen. (eigene Variante)
 
@@ -55,8 +56,10 @@ Auch ein Logo wird hierüber definiert.
 ## Templates
 - `templates/reveal/mod_article.html.twig`
 - `templates/reveal/content_element/text.html.twig`
+- `templates/reveal/content_element/code.html.twig`
 
-# Nutzung - Theme Definitionen
+# Nutzung
+## Theme Definitionen
 - neues Theme anlegen
   - Ordner: `files/reveal`
   - Templates-Ordner: `reveal`
@@ -65,19 +68,26 @@ Auch ein Logo wird hierüber definiert.
   - Seiten-Template: `page/layout/reveal-main [Global]`
   - Eingebundene Elemente: Artikel - slot main
 
-# Nutzung Seiten - Artikel - Text Elemente
+## Seiten
 - Seite anlegen mit angelegtem Seitenlayout
 - Cache, beide auf "nicht cachen"
 
-- Artikel anlegen mit Standard Artikel-Template: `mod_article (Standard)`<br>(article = slide)<br>
+## Artikel
+Artikel anlegen mit Standard Artikel-Template: `mod_article (Standard)`<br>(article = slide)<br>
 Das wird im Frontend dann automatisch durch `templates/reveal/mod_article.html.twig` ersetzt
 
-- Text Element(e) anlegen mit Standard Inhaltselement-Template: `content_element/text [ContaoCore]`<br>(text-element = subslide)<br>
+## Text Element(e)
+Text Element(e) anlegen mit Standard Inhaltselement-Template: `content_element/text [ContaoCore]`<br>(text-element = subslide)<br>
 Das wird im Frontend dann automatisch durch `templates/reveal/content_element/text.html.twig` ersetzt.
 
 Im TinyMCE nun normal den Inhalt eintragen. Überschrift kann genutzt werden, h2 bevorzugt. (dazu gibt es Definitionen in league_ninja.css)
 
 Will man vertikale Folien haben (subslides), dann einfach ein zweites Text Element anlegen im Artikel. (bzw. mehrere, wieviel man halt will)
 
+## Code Element(e)
+Code Element(e) anlegen mit Standard Code-Template: `content_element/code [ContaoCore]`<br>
+(code-element = subslide)<br>
+Das wird im Frontend dann automatisch durch `templates/reveal/content_element/code.html.twig` ersetzt.
 
-
+Im Abschnitt Code nun normal den Quellcode eintragen und drüber die Syntaxvorhebung passend auswählen.<br>
+Überschrift kann genutzt werden, h2 bevorzugt. (dazu gibt es Definitionen in league_ninja.css)
