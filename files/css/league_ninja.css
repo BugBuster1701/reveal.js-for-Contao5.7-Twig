@@ -20,6 +20,10 @@
 .reveal .controls {
     bottom: 3em;
 }
+/* Footer etwas groesser */
+.reveal #title-footer {
+    height: 2.5vh;
+}
 /* Background highlighter */
 .hljs {
     background-color:#000;
@@ -50,6 +54,9 @@ img.noborder {
   background-position: 99% 2%;
 }
 
+.slide-menu-button {
+    bottom: calc(var(--r-controls-spacing) - 0.2em) !important;
+}
 .slide-menu-button .slide-menu-icon,
 .toolbar-panel-button .slide-menu-icon {
     color: var(--r-link-color);

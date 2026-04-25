@@ -4,6 +4,8 @@ Verwendet wurde reveal.js Version 6.0.1
 
 Dabei wird mittels eigenem Seiten-Template, Artikel-Template und Textelement-Template gearbeitet. Das erleichert die Erstellung der Folien / Slides. (HTML Präsentation)
 
+Die Elemente Code und Video/Audio können auch verwendet werden.
+
 Für meine Webseite gebaut, kann aber für jede andere auch verwendet werden.<br>
 Dazu können dann auch einige der Dateinamen anders genannt werden, die sind derzeit durch mehrere parallele Versuche so entstanden.
 
@@ -29,12 +31,10 @@ Das wurde angepasst. (wegen CSP und Datenschutz)
 - https://github.com/skyface753/Reveal.js-Title-Footer
 - abgelegt in files/reveal/dist/plugin/
 
-Leider nicht kompatibel mit neuerem reveal.js.<br>
-Daher wurde die js Datei angepasst/umgeschrieben
+Die js Datei wurde etwas angepasst (class Angaben ergänzt)
 - `files/reveal/dist/plugin/title-footer.js`
 - `files/reveal/dist/plugin/title-footer.css`
 
-Ich bin kein JavaScript Programmierer, daher verzeiht mir die Code "Qualität" :-) 
 
 ### Menu
 - https://github.com/denehyg/reveal.js-menu archived, daher fork genommen:
@@ -43,8 +43,7 @@ Ich bin kein JavaScript Programmierer, daher verzeiht mir die Code "Qualität" :
 
 ## Datei js_reveal.html.twig
 Darin werden alle benötigten JavaScript Dateien geladen und Reveal.js konfiguriert und initialisiert.<br>
-Dort sind auch die Definitionen für den Footer zu finden.<br>
-Hinweis: Das bedeutet leider, das der Footer Inhalt immer gleich ist, wenn man mehrere Seiten anlegt mit Präsentationen. An einer Idee das zu umgehen wird gearbeitet.
+Dort sind auch die (default) Definitionen für den Footer zu finden.<br>
 
 Die Datei liegt in `templates/reveal/js_reveal.html.twig` und wird vom Page Layout geladen. (eigene Variante)
 
@@ -89,5 +88,31 @@ Code Element(e) anlegen mit Standard Code-Template: `content_element/code [Conta
 (code-element = subslide)<br>
 Das wird im Frontend dann automatisch durch `templates/reveal/content_element/code.html.twig` ersetzt.
 
-Im Abschnitt Code nun normal den Quellcode eintragen und drüber die Syntaxvorhebung passend auswählen.<br>
+Im Abschnitt "Code" nun normal den Quellcode eintragen und in "Syntaxvorhebung" den passenden Eintrag auswählen.<br>
 Überschrift kann genutzt werden, h2 bevorzugt. (dazu gibt es Definitionen in league_ninja.css)
+
+## Audio/Video
+Der Elementtyp Video/Audio kann ebenfalls genutzt werden. Anlegen mit Standard Video/Audio-Template: `content_element/player [ContaoCore]`<br>
+(player-element = subslide)<br>
+Das wird im Frontend dann automatisch durch `templates/reveal/content_element/player.html.twig` ersetzt.<br>
+Überschrift kann genutzt werden, h2 bevorzugt. (dazu gibt es Definitionen in league_ninja.css)
+
+## Footer Inhalt
+Die (default) Definitionen sind in der Datei `js_reveal.html.twig` zu finden.<br>
+Wenn `title` nicht definiert ist, wird die erste Überschrift der ersten Folie genommen.
+
+Author kann natürlich überschrieben werden :-) 
+
+Auch mit CSS kann man die Inhalte erweitern oder überschreiben, hier am Beispiel für den `title`
+```css
+/* zum Überschreiben den default Text ausblenden */
+.reveal .title-link {
+  visibility: hidden;
+}
+/* neuen Text definieren */
+.reveal .title-link::after {
+  content: 'Vortrag Reveal und Contao 5.7';
+  visibility: visible;
+}
+```
+Hat man mehrere Seiten angelegt, um mehrere Präsentationen zu erstellen, könnte man in der jeweiligen Seite eine Klasse definieren. Über `.seitenklasse .reveal .title-link...` könnte man dann je Präsentation den `title` überschreiben.

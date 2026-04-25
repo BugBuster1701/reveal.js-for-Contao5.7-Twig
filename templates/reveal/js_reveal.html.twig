@@ -3,7 +3,6 @@
 <script src="/files/reveal/dist/plugin/notes.js"></script>
 <script src="/files/reveal/dist/plugin/search.js"></script>
 <script src="/files/reveal/dist/plugin/markdown.js"></script>
-<script src="/files/reveal/dist/plugin/highlight.js"></script>
 <script src="/files/reveal/dist/plugin/title-footer.js"></script>
 <script type="module" {{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
 import RevealMenu from './files/reveal/dist/plugin/menu/menu.js';
@@ -282,13 +281,13 @@ import RevealMenu from './files/reveal/dist/plugin/menu/menu.js';
         minScale: 0.2,
         maxScale: 2.0,
 
-        footer: {
-            title: 'Contao 5.7 Twig Reveal.js',
+        titleFooter: {
+            //title: 'default ist die erste Überschrift der ersten Folie',
             author: 'BugBuster',
             background: 'rgba(0,0,0,0.1)',
             show_date: true // default is false
         },        
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealFooter, RevealMenu],
+        plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealTitleFooter, RevealMenu],
     });
 </script>
