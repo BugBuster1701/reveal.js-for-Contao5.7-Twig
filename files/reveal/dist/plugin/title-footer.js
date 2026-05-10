@@ -2,7 +2,7 @@
  *                                                       *
  * Javascript for the Title-Footer plugin for Reveal.js  *
  *                                                       *
- * Author: Igor Leturia, Sebastian Joerz, Glen Langer    *
+ * Author: Igor Leturia, Sebastian Joerz                 *
  *                                                       *
  * License: GPL v3                                       *
  * http://www.gnu.org/copyleft/gpl.html                  *

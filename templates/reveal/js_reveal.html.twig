@@ -6,6 +6,8 @@
 <script src="/files/reveal/dist/plugin/title-footer.js"></script>
 <script type="module" {{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
 import RevealMenu from './files/reveal/dist/plugin/menu/menu.js';
+
+
     Reveal.initialize({
         // Display presentation control arrows
         // - true:      Show controls
@@ -282,7 +284,7 @@ import RevealMenu from './files/reveal/dist/plugin/menu/menu.js';
         maxScale: 2.0,
 
         titleFooter: {
-            //title: 'default ist die erste Überschrift der ersten Folie',
+            //title: 'Contao 5.7 Twig',
             author: 'BugBuster',
             background: 'rgba(0,0,0,0.1)',
             show_date: true // default is false
